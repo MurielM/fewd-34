@@ -17,7 +17,7 @@ body{
 
   button{
     float:right;
-    width: 100px;
+    width: auto;
     height: 40px;
     border-radius: 4px;
     position: relative;
@@ -25,6 +25,13 @@ body{
     text-shadow: 0px 1px 0px black;
     color: white;
     font-size: 17px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .greybutton{
+    float: none;
+    position: static;
   }
   .clear{
     background: transparent;
@@ -33,9 +40,20 @@ body{
   .blue{
     background-color: rgb(44,79,176);
     border: 0;
-    padding: 0;
     text-shadow: none;
   }
+
+  .white{
+    background: transparent;
+    color: rgb(44,79,176);
+    border: solid rgb(44,79,176);
+    text-shadow: none;
+  }
+
+  .product{
+    float: left;
+  }
+
 
   main{
     margin-top: 40px;
@@ -67,3 +85,42 @@ body{
     padding-right: 20px;
     padding-left: 20px;
   }
+ul {
+  display: block;
+  margin: 10px 100px;
+}
+
+li{
+  margin: 100px 0px;
+  list-style-type: none;
+}
+
+input{
+  display: inline-block;
+  position: relative;
+  left: 100px;
+  margin: 10px;
+  width: 200px;
+  border-color: pink;
+  border-radius: 3px;
+}
+
+label{
+  position: absolute;
+  margin: 10px;
+}
+
+.check{
+  left: 176px;
+  position: absolute;
+}
+
+.agree{
+  position: relative;
+  left: 30px;
+  top: 8px;
+}
+
+input:valid {
+  border-color:green !important;
+}

@@ -42,16 +42,21 @@ body{
     border: 0;
     text-shadow: none;
   }
-
   .white{
     background: transparent;
     color: rgb(44,79,176);
     border: solid rgb(44,79,176);
     text-shadow: none;
+    float: left;
   }
-
   .product{
     float: left;
+  }
+
+  table button {
+    float: left;
+    margin: 5px !important;
+    border-width: 1px;
   }
 
 
@@ -94,7 +99,6 @@ li{
   margin: 100px 0px;
   list-style-type: none;
 }
-
 input{
   display: inline-block;
   position: relative;
@@ -104,23 +108,33 @@ input{
   border-color: pink;
   border-radius: 3px;
 }
-
+input:valid {
+  border-color:green !important;
+}
 label{
   position: absolute;
   margin: 10px;
 }
-
 .check{
   left: 176px;
   position: absolute;
 }
-
 .agree{
   position: relative;
   left: 30px;
   top: 8px;
 }
 
-input:valid {
-  border-color:green !important;
+table{
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+td {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+td p {
+  margin-top: 0;
 }

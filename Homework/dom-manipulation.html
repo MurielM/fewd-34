@@ -73,13 +73,17 @@ body { font-family: sans-serif; }
       var link = prompt("What is your image URL?");
       var width = parseInt( prompt ("What is the width of the image?"));
       var height = parseInt( prompt ("What is the height of the image?"));
-      var img = document.createElement("img");
+
+      var img = document.createElement("img")
 
       img.setAttribute("src", link);
       img.setAttribute("width", width);
       img.setAttribute("height", height);
+
+
       var box = document.querySelector("#image");
-      box.appendChild("img");
+
+      box.appendChild(img);
     }
   </script>
 </div>
@@ -104,6 +108,10 @@ body { font-family: sans-serif; }
     //  2. set the element's class attribute to "bold"
     //  - or -
     //  2. add the class "bold" using the element's classList
+  var boldp = document.querySelector("#make-me-bold");
+  boldp.classList.toggle('bold');
+
   }
+
   </script>
 </div>

@@ -1,13 +1,11 @@
-
-<!-- saved from url=(0058)http://avandamiri.com/fewd-34/week-5/dom-manipulation.html -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>
+<style>
 body { font-family: sans-serif; }
 .set { border: 1px solid #ccc; padding: 0 2em; border-radius: 5px; margin-bottom: 2em; }
 #image { border: 5px dotted #ccc; border-radius: 10px; padding: 10px; margin-bottom: 1em; }
 .bold { font-weight: bold; }
 </style>
 
-</head><body><div class="set">
+<div class="set">
   <h1>Set 1</h1>
 
   <p>
@@ -20,25 +18,25 @@ body { font-family: sans-serif; }
 
   <ol id="todo-list">
     <li>Pick up dry cleaning</li>
-
   </ol>
 
   <script>
-    function addListItem() {
-      var text = prompt("What do you need to do today?");
+  function addListItem() {
+    // 1. prompt for a todo and save the result         --> var text = prompt("What do you need to do today?")
+    // 2. create an li element                          --> document.createElement()
+    // 3. save the ul in a variable                     --> var list = ?
+    // 4. append the li to ul variable                  --> list.appendChild()
+    // 5. set the prompt result to the li's textContent --> item.textContent = ?
 
-      var item = document.createElement("li");
-        var list = document.querySelector("#todo-list");
-      // var item = document.querySelector("li");
-      item.textContent = text;
-      list.appendChild(item);
+    var text = prompt("What do you need to do today?");
+    var list = document.querySelector("#todo-list");
+    var item = document.createElement("li");
 
-      // 1. prompt for a todo and save the result   --> var text = prompt("What do you need to do today?")
-      // 3. create li element                       --> document.createElement("li")
-      // 4.  save the UL in a vairable            --> var list = ?
-      // 5. append the li to ul variable            UL.appendChild()
-      // 6. set the prompt result to the            li's textContent li.textcontent = ?
-    }
+    item.textContent = text;
+
+    list.appendChild(item);
+  }
+
   </script>
 </div>
 
@@ -59,8 +57,30 @@ body { font-family: sans-serif; }
 
   <script>
   function addImage() {
+  // When the button is clicked:                      --> already wired up on line 51
+  //  1. prompt for url (& assign result to var)      --> var url = prompt("What's the URL?")
+  //  2. prompt for width (& assign result to var)
+  //  3. prompt for height (& assign result to var)
+  //  4. create img element                           --> var img = document.createElement('img')
+  //  5. set img's src attribute                      --> img.setAttribute(?, ?)
+  //  6. set img's width attribute
+  //  7. set img's height attribute
+  //  8. append img to element identified as #image
+  //     8.1. assign element with selector "#image" to var
+  //     8.2. append img to that element
 
-  }
+
+      var link = prompt("What is your image URL?");
+      var width = parseInt( prompt ("What is the width of the image?"));
+      var height = parseInt( prompt ("What is the height of the image?"));
+      var img = document.createElement("img");
+
+      img.setAttribute("src", link);
+      img.setAttribute("width", width);
+      img.setAttribute("height", height);
+      var box = document.querySelector("#image");
+      box.appendChild("img");
+    }
   </script>
 </div>
 
@@ -79,8 +99,11 @@ body { font-family: sans-serif; }
 
   <script>
   function makeBold() {
-    // Your code goes here.
+    // When the button is clicked:                                --> already wired up on line 84
+    //  1. assign element with selector "#make-me-bold" to a var
+    //  2. set the element's class attribute to "bold"
+    //  - or -
+    //  2. add the class "bold" using the element's classList
   }
   </script>
 </div>
-</body></html>

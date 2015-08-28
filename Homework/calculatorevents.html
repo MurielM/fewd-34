@@ -1,0 +1,103 @@
+<style>
+* { box-sizing: border-box; }
+body { font-size: 20px; font-family: sans-serif; }
+
+td { width: 100px; text-align: center; }
+.placeholder, button { width: 100%; }
+.placeholder { height: 23px; border: 1px solid #bababa; border-radius: 3px; }
+button { cursor: pointer; border: 1px solid #58c0f5; color: #58c0f5; background-color: white; font: inherit; }
+button { background-color: #58c0f5; color: white; border-radius: 3px; }
+</style>
+
+<table>
+  <tr>
+    <td>
+      <input type="text" class="first-operand placeholder">
+    </td>
+    <td>
+      <input type="text" class="second-operand placeholder">
+    </td>
+    <td>
+      =
+    </td>
+    <td>
+      <input type="text" class="result placeholder" disabled>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button class="add-button inverted-button">+</button>
+    </td>
+    <td>
+      <button class="subtract-button inverted-button">-</button>
+    </td>
+    <td>
+      <button class="multiply-button inverted-button">*</button>
+    </td>
+    <td>
+      <button class="divide-button inverted-button">/</button>
+    </td>
+  </tr>
+</table>
+
+<script>
+// Your code goes here.  var B = document.querySelector("button");
+//  B.addEventListener("mouseover", surprise);
+//  function surprise(){
+//    alert("Surprise!!!!");
+//  }
+
+var addB = document.querySelector(".add-button");
+addB.addEventListener("click", add);
+
+function add(){
+
+var n1 = parseInt(document.querySelector(".first-operand").value);
+var n2 = parseInt(document.querySelector(".second-operand").value);
+var r1 = document.querySelector(".result");
+
+r1.value = n1 + n2;
+}
+
+var subtractB = document.querySelector(".subtract-button");
+subtractB.addEventListener("click", subtract);
+
+function subtract(){
+
+var n1 = parseInt(document.querySelector(".first-operand").value);
+var n2 = parseInt(document.querySelector(".second-operand").value);
+var r1 = document.querySelector(".result");
+
+r1.value = n1 - n2;
+}
+
+var multiplyB = document.querySelector(".multiply-button");
+multiplyB.addEventListener("click", multiply);
+
+function multiply(){
+
+var n1 = parseInt(document.querySelector(".first-operand").value);
+var n2 = parseInt(document.querySelector(".second-operand").value);
+var r1 = document.querySelector(".result");
+
+r1.value = n1 * n2;
+}
+
+var divideB = document.querySelector(".divide-button");
+divideB.addEventListener("click", divide);
+
+function divide(){
+
+var n1 = parseInt(document.querySelector(".first-operand").value);
+var n2 = parseInt(document.querySelector(".second-operand").value);
+var r1 = document.querySelector(".result");
+
+r1.value = n1 / n2;
+}
+
+
+
+// nest multiple functions within one function, use taget -->function add(e) {if e.target. = addButton ...}
+
+
+</script>

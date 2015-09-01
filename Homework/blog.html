@@ -104,7 +104,19 @@
     </main>
 
     <script>
-      // Your code goes here.
+
+    function likeButton(e){
+      e.preventDefault();
+
+    var likeButton = document.querySelector("a.like-link");
+    likeButton.addEventListener("click", likeButton);
+
+      function likeButton(){
+      var numberedLikes = document.querySelector("span.like-count");
+      var parsedLikes = parseInt(numberedLikes.textContent);
+      var newLikes = parsedLikes +1
+      numberedLikes.textContent=newLikes;
+    };
     </script>
   </body>
 </html>

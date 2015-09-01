@@ -71,8 +71,8 @@ body { font-family: sans-serif; }
 
 
       var link = prompt("What is your image URL?");
-      var width = parseInt( prompt ("What is the width of the image?"));
-      var height = parseInt( prompt ("What is the height of the image?"));
+      var width = prompt ("What is the width of the image?");
+      var height = prompt ("What is the height of the image?");
 
       var img = document.createElement("img")
 
@@ -103,11 +103,6 @@ body { font-family: sans-serif; }
 
   <script>
   function makeBold() {
-    // When the button is clicked:                                --> already wired up on line 84
-    //  1. assign element with selector "#make-me-bold" to a var
-    //  2. set the element's class attribute to "bold"
-    //  - or -
-    //  2. add the class "bold" using the element's classList
   var boldp = document.querySelector("#make-me-bold");
   boldp.classList.toggle('bold');
 

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Pseudo Elements </title>
+      <link rel="stylesheet" href="stylesheet.css" media="screen" >
+  </head>
+
+  <style>
+    .blue {
+      float: left !important;
+    };
+
+  </style>
+  <body>
+    <button class=blue>
+      Click me!
+    </button>
+
+
+
+  <script>
+
+  //Event Binding "click" / "On click call surprise function"
+  //var B =docuemnt.querySelector()
+  //B.addEventListener("click",surprise); < -- ("event",function)
+
+  var B = document.querySelector("button");
+  B.addEventListener("mouseover", surprise);
+  function surprise(){
+    alert("Surprise!!!!");
+  }
+  // where does this go? setTimeout (surprsie, 200);
+  </script>
+
+  </body>
+</html>

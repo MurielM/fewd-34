@@ -105,18 +105,39 @@
 
     <script>
 
-    function likeButton(e){
-      e.preventDefault();
-
     var likeButton = document.querySelector("a.like-link");
-    likeButton.addEventListener("click", likeButton);
+    likeButton.addEventListener("click", like);
 
-      function likeButton(){
-      var numberedLikes = document.querySelector("span.like-count");
-      var parsedLikes = parseInt(numberedLikes.textContent);
-      var newLikes = parsedLikes +1
-      numberedLikes.textContent=newLikes;
-    };
+      function like (){
+      var numberedLikes = document.querySelector(".like-count");
+      var newLikes = parseInt(numberedLikes.textContent) + 1;
+      numberedLikes.textContent= newLikes;
+      }
+
+      var commentButton = document.querySelector("button");
+      commentButton.addEventListener("click", addCommentTest);
+
+      function addCommentTest (){
+        if (newCommentText=" ") {alert("You need to write a comment first");
+      }
+        else {addComment();}
+      }
+
+      function addComment(e){
+        e.preventDefault();}
+
+      function addComment (){
+        var newCommentText = document.querySelector("textarea#new-comment-body").value;
+        //var newDiv = document.createElement("div").setAttribute("class","comment");
+        var newComment = document.createElement("div");
+        newComment.setAttribute("class","comment");
+        newComment.textContent = newCommentText;
+        var comments = document.querySelector("#comments");
+        comments.appendChild(newComment);
+      }
+
+
+
     </script>
   </body>
 </html>

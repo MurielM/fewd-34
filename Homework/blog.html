@@ -117,8 +117,12 @@
       var commentButton = document.querySelector("button");
       commentButton.addEventListener("click", addCommentTest);
 
+      function addCommentTest(e){
+        e.preventDefault();}
+
       function addCommentTest (){
-        if (newCommentText=" ") {alert("You need to write a comment first");
+        var newCommentText = document.querySelector("textarea#new-comment-body").value;
+        if (newCommentText.length==0) {alert("You need to write a comment first");
       }
         else {addComment();}
       }

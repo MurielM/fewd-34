@@ -118,15 +118,17 @@
       commentButton.addEventListener("click", addCommentTest);
 
 
-      function addCommentTest (){
+      function addCommentTest (e){
+        e.preventDefault();
+
         var newCommentText = document.querySelector("textarea#new-comment-body").value;
-        if (newCommentText.length==0) {alert("You need to write a comment first");
-      }
-        else {addComment();}
+        if (newCommentText.length==0) {
+          alert("You need to write a comment first");
+        }
+          else {addComment();
+        }
       }
 
-      function addComment(e){
-        e.preventDefault();}
 
       function addComment (){
         var newCommentText = document.querySelector("textarea#new-comment-body").value;

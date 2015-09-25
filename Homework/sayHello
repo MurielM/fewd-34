@@ -1,0 +1,15 @@
+<script>
+
+var humans = ["Human 1", "human 2", "human 3"]
+
+function sayHello (human){
+  alert ("Hello " + human);
+}
+
+humans.forEach(sayHello)
+
+</script>
+
+var s = s.split(",") //<--string
+
+"A,B".split(",")

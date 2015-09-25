@@ -72,8 +72,12 @@
     // Your code goes here.
 
       var moviesButton = document.querySelector("#list-movies");
-      moviesButton.addEventListener("click", listMovie);
+      moviesButton.addEventListener("click", listMovies);
 // button.listMovies
+
+    function listMovies(){
+        movies.forEach(listMovie)
+    }
 
     function listMovie(movie){
       var list = document.querySelector('#movies')
@@ -96,7 +100,8 @@
       item.appendChild(releaseDate)
     }
 
-    movies.forEach(listMovie)
+
+
 
   //  <img src="http://ia.media-imdb.com/images/M/MV5BMjMxMTQ3MzMwMV5BMl5BanBnXkFtZTgwNTYxNzYxMTE@._V1_SY317_CR0,0,214,317_AL_.jpg">
   //  <div class="movie-title">Cool Runnings</div>

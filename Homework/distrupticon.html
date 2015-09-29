@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Disrupticon</title>
+    <style>
+
+      body {
+        font-family: 'Lucida Grande', Verdana, Arial;
+        font-size: 12px;
+      }
+
+      .rotate {
+        margin: 150px;
+        width: 200px;
+        height: 200px;
+        -webkit-perspective: 800;
+      }
+
+
+      .ring {
+        margin-top: 200px;
+        height: 110px;
+        width: 10px;
+        -webkit-transform-style: preserve-3d;
+        -webkit-animation-iteration-count: 3;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-name: x-spin;
+        -webkit-animation-duration: 3s;
+        -webkit-transform: rotateX(800deg);
+      }
+
+      .ring > :nth-child(odd) {
+        background-color: #d3d3d3;
+      }
+
+      .ring > :nth-child(even) {
+        background-color: #080808;
+        color: white;
+      }
+
+      .poster {
+        position: absolute;
+        left: 50px;
+        width: 200px;
+        height: auto;
+        opacity: 0.8;
+        color: rgba(0,0,0,0.9);
+        -webkit-border-radius: 10px;
+        font-family: 'Helvetica', sans-serif;
+        font-size: 36px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 28px;
+      }
+
+
+      .industry {
+        position: absolute;
+        left: 50px;
+        width: 200px;
+        height: auto;
+        opacity: 0.8;
+        color: rgba(0,0,0,0.9);
+
+      }
+
+      .industry > p {
+        font-family: 'Helvetica', sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      .circleOne {
+        float: left;
+      }
+      .circleTwo {
+        float: right;
+        position: relative;
+        margin-right: 600px;
+      }
+
+
+/*
+on click above?
+
+      */
+      @-webkit-keyframes x-spin {
+        0%    { -webkit-transform: rotateX(0deg); }
+        100%  { -webkit-transform: rotateX(360deg); }
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>Startup</h1>
+      <div class="circleOne">
+      <div class="rotate">
+        <div class="ring">
+        <div class="poster" style="-webkit-transform: rotateX(0deg) translateZ(200px); "><p>Uber</p></div>
+        <div class="poster" style="-webkit-transform: rotateX(30deg) translateZ(200px); "><p>Tindr</p></div>
+        <div class="poster" style="-webkit-transform: rotateX(60deg) translateZ(200px); "><p>Birchbox</p></div>
+        <div class="poster" style="-webkit-transform: rotateX(90deg) translateZ(200px); "><p>Airbnb</p></div>
+        <div class="poster" style="-webkit-transform: rotateX(120deg) translateZ(200px); "><p>TINT</p></div>
+        <div class="poster" style="-webkit-transform: rotateX(150deg) translateZ(200px); "><p>Optimizely</p></div>
+        <div class="poster" style="-webkit-transform: rotateX(180deg) translateZ(200px); "><p>Hubspot</p></div>
+        <div class="poster" style="-webkit-transform: rotateX(210deg) translateZ(200px); "><p>Slack</p></div>
+        <div class="poster" style="-webkit-transform: rotateX(240deg) translateZ(200px); "><p>Coursera</p></div>
+        <div class="poster" style="-webkit-transform: rotateX(270deg) translateZ(200px); "><p>Instagram</p></div>
+        <div class="poster" style="-webkit-transform: rotateX(300deg) translateZ(200px); "><p>Indochino</p></div>
+        <div class="poster" style="-webkit-transform: rotateX(330deg) translateZ(200px); "><p>Yelp</p></div>
+        </div>
+      </div>
+      </div>
+      <h1>Industry</h1>
+        <div class="circleTwo"
+        <div class="rotate">
+          <div class="ring">
+          <div class="industry" style="-webkit-transform: rotateX(0deg) translateZ(200px); "><p>Dogs</p></div>
+          <div class="industry" style="-webkit-transform: rotateX(15deg) translateZ(200px); "><p>Sandwiches</p></div>
+          <div class="industry" style="-webkit-transform: rotateX(30deg) translateZ(200px); "><p>Weed</p></div>
+          <div class="industry" style="-webkit-transform: rotateX(45deg) translateZ(200px); "><p>Parking</p></div>
+          <div class="industry" style="-webkit-transform: rotateX(60deg) translateZ(200px); "><p>Laundry</p></div>
+          <div class="industry" style="-webkit-transform: rotateX(75deg) translateZ(200px); "><p>Petting zoos</p></div>
+          <div class="industry" style="-webkit-transform: rotateX(90deg) translateZ(200px); "><p>Wedding</p></div>
+          <div class="industry" style="-webkit-transform: rotateX(105deg) translateZ(200px); "><p>Parking</p></div>
+          <div class="industry" style="-webkit-transform: rotateX(120deg) translateZ(200px); "><p>Yoga</p></div>
+          <div class="industry" style="-webkit-transform: rotateX(135deg) translateZ(200px); "><p>Newspapers</p></div>
+          <div class="industry" style="-webkit-transform: rotateX(150deg) translateZ(200px); "><p>Beards</p></div>
+          <div class="industry" style="-webkit-transform: rotateX(165deg) translateZ(200px); "><p>Boats</p></div>
+          <div class="industry" style="-webkit-transform: rotateX(180deg) translateZ(200px); "><p>Storage</p></div>
+          <div class="industry" style="-webkit-transform: rotateX(195deg) translateZ(200px); "><p>Websites</p></div>
+          <div class="industry" style="-webkit-transform: rotateX(210deg) translateZ(200px); "><p>Mattresses</p></div>
+          <div class="industry" style="-webkit-transform: rotateX(225deg) translateZ(200px); "><p>Doctors</p></div>
+          <div class="industry" style="-webkit-transform: rotateX(240deg) translateZ(200px); "><p>Alcohol</p></div>
+          <div class="industry" style="-webkit-transform: rotateX(255deg) translateZ(200px); "><p>Coffee</p></div>
+          <div class="industry" style="-webkit-transform: rotateX(270deg) translateZ(200px); "><p>Underpants</p></div>
+          <div class="industry" style="-webkit-transform: rotateX(285deg) translateZ(200px); "><p>Socks</p></div>
+          <div class="industry" style="-webkit-transform: rotateX(300deg) translateZ(200px); "><p>Babies</p></div>
+          <div class="industry" style="-webkit-transform: rotateX(315deg) translateZ(200px); "><p>Shoes</p></div>
+          <div class="industry" style="-webkit-transform: rotateX(330deg) translateZ(200px); "><p>Cats</p></div>
+          <div class="industry" style="-webkit-transform: rotateX(345deg) translateZ(200px); "><p>Camping</p></div>
+        </div>
+          </div>
+
+        </div>
+  </body>
+</html>

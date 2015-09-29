@@ -4,31 +4,45 @@
     <meta charset="utf-8">
     <title>Disrupticon</title>
     <style>
+    * {
+      border: 1px;
+      border: black dashed;
+    }
 
       body {
         font-family: 'Lucida Grande', Verdana, Arial;
         font-size: 12px;
+        background: #ff5349;
       }
 
-      .rotate {
-        margin: 150px;
-        width: 200px;
-        height: 200px;
-        -webkit-perspective: 800;
+      .headline {
+        font-size: 30px;
       }
 
+            .rotate {
+              margin: 150px;
+              width: 200px;
+              height: 200px;
+              -webkit-perspective: 800;
+              -webkit-transform-style: preserve-3d;
+            }
 
-      .ring {
-        margin-top: 200px;
-        height: 110px;
-        width: 10px;
-        -webkit-transform-style: preserve-3d;
-        -webkit-animation-iteration-count: 3;
-        -webkit-animation-timing-function: linear;
-        -webkit-animation-name: x-spin;
-        -webkit-animation-duration: 3s;
-        -webkit-transform: rotateX(800deg);
-      }
+
+                              .ring {
+                                height: 110px;
+                                -webkit-transform-style: preserve-3d;
+                                -webkit-animation-iteration-count: 3;
+                                -webkit-animation-timing-function: linear;
+                                -webkit-animation-name: x-spin;
+                                -webkit-animation-duration: 3s;
+                                -webkit-transform: rotateX(800deg); /*why this here too? */
+                              }
+
+                              @-webkit-keyframes x-spin {
+                                0%    { -webkit-transform: rotateX(0deg); }
+                                50%   { -webkit-transform: rotateX(180deg); }
+                                100%  { -webkit-transform: rotateX(360deg); }
+                              }
 
       .ring > :nth-child(odd) {
         background-color: #d3d3d3;
@@ -39,7 +53,7 @@
         color: white;
       }
 
-      .poster {
+      .startup {
         position: absolute;
         left: 50px;
         width: 200px;
@@ -79,44 +93,48 @@
       .circleTwo {
         float: right;
         position: relative;
-        margin-right: 600px;
-      }
-
-
-/*
-on click above?
-
-      */
-      @-webkit-keyframes x-spin {
-        0%    { -webkit-transform: rotateX(0deg); }
-        100%  { -webkit-transform: rotateX(360deg); }
+        margin-right: 50px;
       }
 
     </style>
   </head>
   <body>
-    <h1>Startup</h1>
+    <div class="headline">
+      <h1>
+        Disrupticon
+      </h1>
+      <h2>
+        The Disruptive Startup Generator
+      </h2>
+    </div>
+
+
       <div class="circleOne">
-      <div class="rotate">
+            <h1>Startup</h1>
+        <div class="rotate">
         <div class="ring">
-        <div class="poster" style="-webkit-transform: rotateX(0deg) translateZ(200px); "><p>Uber</p></div>
-        <div class="poster" style="-webkit-transform: rotateX(30deg) translateZ(200px); "><p>Tindr</p></div>
-        <div class="poster" style="-webkit-transform: rotateX(60deg) translateZ(200px); "><p>Birchbox</p></div>
-        <div class="poster" style="-webkit-transform: rotateX(90deg) translateZ(200px); "><p>Airbnb</p></div>
-        <div class="poster" style="-webkit-transform: rotateX(120deg) translateZ(200px); "><p>TINT</p></div>
-        <div class="poster" style="-webkit-transform: rotateX(150deg) translateZ(200px); "><p>Optimizely</p></div>
-        <div class="poster" style="-webkit-transform: rotateX(180deg) translateZ(200px); "><p>Hubspot</p></div>
-        <div class="poster" style="-webkit-transform: rotateX(210deg) translateZ(200px); "><p>Slack</p></div>
-        <div class="poster" style="-webkit-transform: rotateX(240deg) translateZ(200px); "><p>Coursera</p></div>
-        <div class="poster" style="-webkit-transform: rotateX(270deg) translateZ(200px); "><p>Instagram</p></div>
-        <div class="poster" style="-webkit-transform: rotateX(300deg) translateZ(200px); "><p>Indochino</p></div>
-        <div class="poster" style="-webkit-transform: rotateX(330deg) translateZ(200px); "><p>Yelp</p></div>
+        <div class="startup" style="-webkit-transform: rotateX(0deg) translateZ(200px); "><p>Uber</p></div>
+        <div class="startup" style="-webkit-transform: rotateX(30deg) translateZ(200px); "><p>Tindr</p></div>
+        <div class="startup" style="-webkit-transform: rotateX(60deg) translateZ(200px); "><p>Birchbox</p></div>
+        <div class="startup" style="-webkit-transform: rotateX(90deg) translateZ(200px); "><p>Airbnb</p></div>
+        <div class="startup" style="-webkit-transform: rotateX(120deg) translateZ(200px); "><p>TINT</p></div>
+        <div class="startup" style="-webkit-transform: rotateX(150deg) translateZ(200px); "><p>Optimizely</p></div>
+        <div class="startup" style="-webkit-transform: rotateX(180deg) translateZ(200px); "><p>Hubspot</p></div>
+        <div class="startup" style="-webkit-transform: rotateX(210deg) translateZ(200px); "><p>Slack</p></div>
+        <div class="startup" style="-webkit-transform: rotateX(240deg) translateZ(200px); "><p>Coursera</p></div>
+        <div class="startup" style="-webkit-transform: rotateX(270deg) translateZ(200px); "><p>Instagram</p></div>
+        <div class="startup" style="-webkit-transform: rotateX(300deg) translateZ(200px); "><p>Indochino</p></div>
+        <div class="startup" style="-webkit-transform: rotateX(330deg) translateZ(200px); "><p>Yelp</p></div>
         </div>
       </div>
+      <button>
+        Spin
+      </button>
       </div>
-      <h1>Industry</h1>
-        <div class="circleTwo"
-        <div class="rotate">
+
+        <div class="circleTwo">
+            <h1>Industry</h1>
+          <div class="rotate">
           <div class="ring">
           <div class="industry" style="-webkit-transform: rotateX(0deg) translateZ(200px); "><p>Dogs</p></div>
           <div class="industry" style="-webkit-transform: rotateX(15deg) translateZ(200px); "><p>Sandwiches</p></div>
@@ -144,7 +162,20 @@ on click above?
           <div class="industry" style="-webkit-transform: rotateX(345deg) translateZ(200px); "><p>Camping</p></div>
         </div>
           </div>
-
+          <button>
+            Spin
+          </button>
         </div>
+
+
   </body>
+  <style>
+var ringSpin = document.querySelector(".ring");
+ringSpin.addEventListener("click", spin);
+
+function spin(event) {
+  wheel.classList.add("spin");
+}
+  </style>
+
 </html>

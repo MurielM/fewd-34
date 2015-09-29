@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>Disrupticon</title>
     <style>
+
+
   /*  * {
       border: 1px;
       border: black dashed;
@@ -11,41 +13,66 @@
     */
 
       body {
-        font-family: 'Lucida Grande', Verdana, Arial;
+        font-family: Georgia, serif;
         font-size: 12px;
         background: #ff5349;
+        text-align: center;
       }
 
       .headline {
         font-size: 30px;
+        margin-bottom: 100px;
       }
 
       #for {
         position: absolute;
         margin-left: 45%;
-        margin-top: 230px;
+        margin-top: 100px;
         font-size: 30px;
+        font-family: cursive;
       }
 
             .rotate {
               margin: 150px;
               width: 200px;
               height: 310px;
-              -webkit-perspective: 900;
+              -webkit-perspective: 800;
               -webkit-transform-style: preserve-3d;
             }
-                            .new {
-                                height: 110px;
-                                -webkit-transform-style: preserve-3d;
-                                -webkit-animation-timing-function: ease-out;
-                                -webkit-animation-name: spin;
-                                -webkit-animation-duration: 4s;
-                              }
 
-                              @keyframes spin {
-                                from { -webkit-transform: rotateX(0deg); }
-                                to { -webkit-transform: rotateX(360deg); }
-                              }
+            .newOne {
+              height: 110px;
+              -webkit-transform-style: preserve-3d;
+              -webkit-animation-timing-function: ease-out;
+              -webkit-animation-name: spinOne;
+              -webkit-animation-duration: 4s;
+            }
+
+            @keyframes spinOne {
+              from { -webkit-transform: rotateX(0deg); }
+              to { -webkit-transform: rotateX(360deg); }
+            }
+
+
+            .newTwo {
+              height: 110px;
+              -webkit-transform-style: preserve-3d;
+              -webkit-animation-timing-function: ease-out;
+              -webkit-animation-name: spinTwo;
+              -webkit-animation-duration: 4s;
+            }
+
+                  @keyframes spinTwo {
+                    from { -webkit-transform: rotateX(-10deg); }
+                    to { -webkit-transform: rotateX(350deg); }
+                  }
+
+
+              .ringTwo {
+                    -webkit-transform-style: preserve-3d;
+                -webkit-transform: rotateX(-10deg);
+              }
+
 
       .ring > :nth-child(odd) {
         background-color: #d3d3d3;
@@ -58,36 +85,29 @@
 
       .startup {
         position: absolute;
-        left: 50px;
         width: 200px;
         height: auto;
         opacity: 0.8;
         color: rgba(0,0,0,0.9);
-        -webkit-border-radius: 10px;
+        border-radius: 10px;
         font-family: 'Helvetica', sans-serif;
-        font-size: 36px;
+        font-size: 34px;
         font-weight: bold;
         text-align: center;
-        margin-top: 28px;
       }
 
 
       .industry {
         position: absolute;
-        left: 50px;
         width: 200px;
         height: auto;
         opacity: 0.8;
         color: rgba(0,0,0,0.9);
-
-      }
-
-      .industry > p {
+        border-radius: 5px;
         font-family: 'Helvetica', sans-serif;
-        font-size: 20px;
+        font-size: 17px;
         font-weight: bold;
         text-align: center;
-        margin-top: 10px;
       }
 
       .circleOne {
@@ -113,7 +133,6 @@
 
 
       <div class="circleOne">
-            <h1>Startup</h1>
         <div class="rotate">
         <div class="ring ringOne">
         <div class="startup" style="-webkit-transform: rotateX(0deg) translateZ(200px); "><p>Uber</p></div>
@@ -131,12 +150,12 @@
         </div>
       </div>
     </div>
+
 <div id="for">
 <h1> for </h1>
 </div>
 
         <div class="circleTwo">
-            <h1>Industry</h1>
           <div class="rotate">
           <div class="ring ringTwo">
           <div class="industry" style="-webkit-transform: rotateX(0deg) translateZ(200px); "><p>Dogs</p></div>
@@ -145,7 +164,7 @@
           <div class="industry" style="-webkit-transform: rotateX(45deg) translateZ(200px); "><p>Parking</p></div>
           <div class="industry" style="-webkit-transform: rotateX(60deg) translateZ(200px); "><p>Laundry</p></div>
           <div class="industry" style="-webkit-transform: rotateX(75deg) translateZ(200px); "><p>Petting zoos</p></div>
-          <div class="industry" style="-webkit-transform: rotateX(90deg) translateZ(200px); "><p>Wedding</p></div>
+          <div class="industry" style="-webkit-transform: rotateX(90deg) translateZ(200px); "><p>Weddings</p></div>
           <div class="industry" style="-webkit-transform: rotateX(105deg) translateZ(200px); "><p>Parking</p></div>
           <div class="industry" style="-webkit-transform: rotateX(120deg) translateZ(200px); "><p>Yoga</p></div>
           <div class="industry" style="-webkit-transform: rotateX(135deg) translateZ(200px); "><p>Newspapers</p></div>
@@ -162,7 +181,7 @@
           <div class="industry" style="-webkit-transform: rotateX(300deg) translateZ(200px); "><p>Babies</p></div>
           <div class="industry" style="-webkit-transform: rotateX(315deg) translateZ(200px); "><p>Shoes</p></div>
           <div class="industry" style="-webkit-transform: rotateX(330deg) translateZ(200px); "><p>Cats</p></div>
-          <div class="industry" style="-webkit-transform: rotateX(345deg) translateZ(200px); "><p>Camping</p></div>
+          <div class="industry" style="-webkit-transform: rotateX(345deg) translateZ(200px); "><p>Fitness</p></div>
         </div>
           </div>
         </div>
@@ -180,12 +199,12 @@
 
       var ring = document.querySelector(".ringOne")
         function spin() {
-          ring.classList.add("new");
+          ring.classList.add("newOne");
           }
 
       var ringTwo = document.querySelector(".ringTwo")
         function spinTwo() {
-          ringTwo.classList.add("new")
+          ringTwo.classList.add("newTwo")
         }
 
     </script>

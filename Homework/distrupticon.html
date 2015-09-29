@@ -19,29 +19,31 @@
         font-size: 30px;
       }
 
+      #for {
+        position: absolute;
+        margin-left: 45%;
+        margin-top: 230px;
+        font-size: 30px;
+      }
+
             .rotate {
               margin: 150px;
               width: 200px;
-              height: 200px;
-              -webkit-perspective: 800;
+              height: 310px;
+              -webkit-perspective: 900;
               -webkit-transform-style: preserve-3d;
             }
-
-
-                              .ring {
+                            .new {
                                 height: 110px;
                                 -webkit-transform-style: preserve-3d;
-                                -webkit-animation-iteration-count: 3;
-                                -webkit-animation-timing-function: linear;
-                                -webkit-animation-name: x-spin;
-                                -webkit-animation-duration: 3s;
-                                -webkit-transform: rotateX(800deg); /*why this here too? */
+                                -webkit-animation-timing-function: ease-out;
+                                -webkit-animation-name: spin;
+                                -webkit-animation-duration: 4s;
                               }
 
-                              @-webkit-keyframes x-spin {
-                                0%    { -webkit-transform: rotateX(0deg); }
-                                50%   { -webkit-transform: rotateX(180deg); }
-                                100%  { -webkit-transform: rotateX(360deg); }
+                              @keyframes spin {
+                                from { -webkit-transform: rotateX(0deg); }
+                                to { -webkit-transform: rotateX(360deg); }
                               }
 
       .ring > :nth-child(odd) {
@@ -112,7 +114,7 @@
       <div class="circleOne">
             <h1>Startup</h1>
         <div class="rotate">
-        <div class="ring">
+        <div class="ring ringOne">
         <div class="startup" style="-webkit-transform: rotateX(0deg) translateZ(200px); "><p>Uber</p></div>
         <div class="startup" style="-webkit-transform: rotateX(30deg) translateZ(200px); "><p>Tindr</p></div>
         <div class="startup" style="-webkit-transform: rotateX(60deg) translateZ(200px); "><p>Birchbox</p></div>
@@ -127,15 +129,15 @@
         <div class="startup" style="-webkit-transform: rotateX(330deg) translateZ(200px); "><p>Yelp</p></div>
         </div>
       </div>
-      <button>
-        Spin
-      </button>
-      </div>
+    </div>
+<div id="for">
+<h1> for </h1>
+</div>
 
         <div class="circleTwo">
             <h1>Industry</h1>
           <div class="rotate">
-          <div class="ring">
+          <div class="ring ringTwo">
           <div class="industry" style="-webkit-transform: rotateX(0deg) translateZ(200px); "><p>Dogs</p></div>
           <div class="industry" style="-webkit-transform: rotateX(15deg) translateZ(200px); "><p>Sandwiches</p></div>
           <div class="industry" style="-webkit-transform: rotateX(30deg) translateZ(200px); "><p>Weed</p></div>
@@ -162,20 +164,30 @@
           <div class="industry" style="-webkit-transform: rotateX(345deg) translateZ(200px); "><p>Camping</p></div>
         </div>
           </div>
-          <button>
-            Spin
-          </button>
         </div>
 
 
-  </body>
-  <style>
-var ringSpin = document.querySelector(".ring");
-ringSpin.addEventListener("click", spin);
 
-function spin(event) {
-  wheel.classList.add("spin");
-}
-  </style>
+
+    <script> // <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+
+      var circleOne = document.querySelector(".circleOne");
+      circleOne.addEventListener("click", spin);
+
+      var circleTwo = document.querySelector(".circleTwo");
+      circleTwo.addEventListener("click", spinTwo)
+
+      var ring = document.querySelector(".ringOne")
+        function spin() {
+          ring.classList.add("new");
+          }
+
+      var ringTwo = document.querySelector(".ringTwo")
+        function spinTwo() {
+          ringTwo.classList.add("new")
+        }
+
+    </script>
+  </body>
 
 </html>

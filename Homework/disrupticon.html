@@ -6,11 +6,11 @@
     <style>
 
 
-  /*  * {
+    * {
       border: 1px;
       border: black dashed;
     }
-    */
+
 
       body {
         font-family: Georgia, serif;
@@ -32,47 +32,13 @@
         font-family: cursive;
       }
 
-            .rotate {
-              margin: 150px;
-              width: 200px;
-              height: 310px;
-              -webkit-perspective: 800;
-              -webkit-transform-style: preserve-3d;
+        .rotate {
+            margin: 150px;
+            width: 200px;
+            height: 310px;
+            -webkit-perspective: 800;
+            -webkit-transform-style: preserve-3d;
             }
-
-            .newOne {
-              height: 110px;
-              -webkit-transform-style: preserve-3d;
-              -webkit-animation-timing-function: ease-out;
-              -webkit-animation-name: spinOne;
-              -webkit-animation-duration: 4s;
-            }
-
-            @keyframes spinOne {
-              from { -webkit-transform: rotateX(0deg); }
-              to { -webkit-transform: rotateX(360deg); }
-            }
-
-
-            .newTwo {
-              height: 110px;
-              -webkit-transform-style: preserve-3d;
-              -webkit-animation-timing-function: ease-out;
-              -webkit-animation-name: spinTwo;
-              -webkit-animation-duration: 4s;
-            }
-
-                  @keyframes spinTwo {
-                    from { -webkit-transform: rotateX(-10deg); }
-                    to { -webkit-transform: rotateX(350deg); }
-                  }
-
-
-              .ringTwo {
-                    -webkit-transform-style: preserve-3d;
-                -webkit-transform: rotateX(-10deg);
-              }
-
 
       .ring > :nth-child(odd) {
         background-color: #d3d3d3;
@@ -94,6 +60,7 @@
         font-size: 34px;
         font-weight: bold;
         text-align: center;
+        cursor: pointer;
       }
 
 
@@ -108,6 +75,7 @@
         font-size: 17px;
         font-weight: bold;
         text-align: center;
+        cursor: pointer;
       }
 
       .circleOne {
@@ -118,6 +86,49 @@
         position: relative;
         margin-right: 50px;
       }
+
+
+          /*@keyframes spinOne {*/
+            /*from { -webkit-transform: rotateX(0deg); }*/
+            /*to { -webkit-transform: rotateX(360deg); }*/
+          /*}*/
+
+        /*.newTwo {
+          height: 110px;
+          -webkit-transform-style: preserve-3d;*/
+
+
+          /*-webkit-animation-timing-function: ease-out;
+          -webkit-animation-name: spinTwo;
+          -webkit-animation-duration: 4s;*/
+          /*}*/
+
+
+
+          /*.spinTwo {
+            -webkit-transition: transform 4s;
+            -webkit-transform: rotateX(350deg);
+          }*/
+
+          .ringOne {
+              height: 110px;
+              -webkit-transform-style: preserve-3d;
+              -webkit-animation-timing-function: ease-out;
+              /*-webkit-animation-duration: 4s;*/
+              -webkit-transition: transform 4s;
+              }
+
+          .ringTwo {
+            -webkit-transform: rotateX(-10deg);
+            height: 60px !important;
+            -webkit-transform-style: preserve-3d;
+            -webkit-animation-timing-function: ease-out;
+            -webkit-transition: transform 6s;
+
+
+          }
+
+/*some of ringOne and ringTwo properties can be consolidated under .ring*/
 
     </style>
   </head>
@@ -171,7 +182,7 @@
           <div class="industry" style="-webkit-transform: rotateX(150deg) translateZ(200px); "><p>Beards</p></div>
           <div class="industry" style="-webkit-transform: rotateX(165deg) translateZ(200px); "><p>Boats</p></div>
           <div class="industry" style="-webkit-transform: rotateX(180deg) translateZ(200px); "><p>Storage</p></div>
-          <div class="industry" style="-webkit-transform: rotateX(195deg) translateZ(200px); "><p>Websites</p></div>
+          <div class="industry" style="-webkit-transform: rotateX(195deg) translateZ(200px); "><p>Public Transportation</p></div>
           <div class="industry" style="-webkit-transform: rotateX(210deg) translateZ(200px); "><p>Mattresses</p></div>
           <div class="industry" style="-webkit-transform: rotateX(225deg) translateZ(200px); "><p>Doctors</p></div>
           <div class="industry" style="-webkit-transform: rotateX(240deg) translateZ(200px); "><p>Alcohol</p></div>
@@ -185,6 +196,16 @@
         </div>
           </div>
         </div>
+<button id="reset">
+This idea sucks! Reset to Spin Again
+</button>
+
+<button id="add">
+Great idea! Add it to the list.
+</button>
+<ul class=headline>
+Great Ideas
+</ul>
 
 
 
@@ -192,22 +213,101 @@
     <script> // <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
 
       var circleOne = document.querySelector(".circleOne");
-      circleOne.addEventListener("click", spin);
+      circleOne.addEventListener("click", spinOne);
 
       var circleTwo = document.querySelector(".circleTwo");
       circleTwo.addEventListener("click", spinTwo)
 
-      var ring = document.querySelector(".ringOne")
-        function spin() {
-          ring.classList.add("newOne");
-          }
+      var pickerOne = (Math.floor(Math.random()*12))
+      var stopAngleOne = 720+pickerOne*30+"deg"
+      var rotateValueOne = "rotateX("+stopAngleOne+")"
 
-      var ringTwo = document.querySelector(".ringTwo")
-        function spinTwo() {
-          ringTwo.classList.add("newTwo")
+      var pickerTwo = (Math.floor(Math.random()*24))
+      var stopAngleTwo = 720+pickerTwo*30+"deg"
+      var rotateValueTwo = "rotateX("+stopAngleTwo+")"
+
+      var ringOne = document.querySelector(".ringOne")
+
+       function spinOne() {
+        ringOne.style.transform = rotateValueOne;
         }
 
+        var ringTwo = document.querySelector(".ringTwo")
+
+        function spinTwo() {
+          //ringTwo.classList.add("spinTwo")
+       ringTwo.style.transform = rotateValueTwo;
+
+     }
+// Button to reset when people are ready to spin again...
+// if method removes style.transform for each wheel, PROBLEM: math generates a random number once per refresh
+
+     var reset = document.querySelector("#reset")
+     reset.addEventListener("click", reload);
+
+     function reload (){
+    //  ringTwo.style.removeProperty('transform');
+    //  ringOne.style.removeProperty('transform');
+      window.location.reload(false);
+     }
+//WINNER PICKER THIS SHIT AINT WORKING AHHHH WHYYYY
+    //function pick (){
+      var meow = document.querySelector("div:nth-child("+pickerOne+")");
+      var winningStartup = meow.textContent;
+
+
+  //  }
+
+  var add = document.querySelector("#add");
+  add.addEventListener("click", goodIdea);
+
+  function goodIdea(e){
+  e.preventDefault();
+  var list = document.querySelector("ul");
+  var listItem = document.createElement("li");
+  var content = meow.textContent;
+
+  listItem.textContent = content;
+  list.appendChild(listItem);
+  }
+
+
+
+
+
+
+//STOP ANGLE CALCULATED USING MATH.RANDOM
+    //    var stopAngle = Math.floor(Math.random() * 360)
+
+// ANGLE OF "POINTER" IS NEEDED (for now, let's say 10 deg)
+    //    var pointerAngle = 10
+
+// Calculating stopAngle using var stopAngle. this is different than a variable.
+//how? b/c it will be within a function or if/then statement? what is happening?
+//if pointer = 0 do we need this?
+    //    stopAngle = (360 + pointerAngle) - stopAngle;
+
+//ARRAY FOR WHEEL SPIN RESULTS
+      //  Add items to the array which correspond to the prizes in the segemnts of the wheel.
+        // The important properties are the startAngle and the endAngle in degrees, the name and anything else you want to add is optional.
+        // In order to work correctly the the start and end angles need to match the begining and end of the segments for the prizes in your wheel image.
+        // Thinking about a clock face, 0 is at the 12 o'clock, 90 is at the 3 o'clock, 180 is 6 o'clock, 270 is 9 o'clock.
+        //var prizes = new Array();
+      //  prizes[0] = {"name" : "Prize 1", "startAngle" : 0,   "endAngle" : 44};  // Note how prize end angle is 1 less than start angle of next prize so no overlap.
+      //  prizes[1] = {"name" : "Prize 2", "startAngle" : 45,  "endAngle" : 89};
+      //  prizes[2] = {"name" : "Prize 3", "startAngle" : 90,  "endAngle" : 134};
+      //  prizes[3] = {"name" : "Prize 4", "startAngle" : 135, "endAngle" : 179};
+      //  prizes[4] = {"name" : "Prize 5", "startAngle" : 180, "endAngle" : 224};
+      //  prizes[5] = {"name" : "Prize 6", "startAngle" : 225, "endAngle" : 269};
+      //  prizes[6] = {"name" : "Prize 7", "startAngle" : 270, "endAngle" : 314};
+      //  prizes[7] = {"name" : "Prize 8", "startAngle" : 315, "endAngle" : 360};
+
     </script>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"> -->
+    <!-- $( "div:nth-child("+pickerOne+")")-->
+
+    <!-- </script> -->
   </body>
 
 </html>

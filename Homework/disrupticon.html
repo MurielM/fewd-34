@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <meta charset="utf-8">
     <title>Disrupticon</title>
     <style>
 
 
-    * {
+    /** {
       border: 1px;
       border: black dashed;
-    }
+    }*/
 
 
       body {
@@ -27,7 +28,7 @@
       #for {
         position: absolute;
         margin-left: 45%;
-        margin-top: 100px;
+        margin-top: 90px;
         font-size: 30px;
         font-family: cursive;
       }
@@ -80,11 +81,15 @@
 
       .circleOne {
         float: left;
+        position: relative;
+        display: inline-block;
       }
       .circleTwo {
         float: right;
         position: relative;
         margin-right: 50px;
+        margin-top: 30px;
+        height: auto;
       }
 
 
@@ -128,6 +133,35 @@
 
           }
 
+          .arrow-right {
+            position: absolute;
+            margin-top: 122px;
+            margin-left: 90px;
+	           width: 0;
+	            height: 0;
+	             border-top: 20px solid transparent;
+	              border-bottom: 20px solid transparent;
+	               border-left: 20px solid black;
+                  }
+
+.arrow-left {
+  margin-top: 155px;
+  margin-left: 405px;
+position: absolute;
+width: 0;
+height: 0;
+border-top: 20px solid transparent;
+border-bottom: 20px solid transparent;
+
+border-right: 20px solid black;
+}
+
+/*button {
+  position: absolute;
+  margin-left: 300px;
+}*/
+
+
 /*some of ringOne and ringTwo properties can be consolidated under .ring*/
 
     </style>
@@ -142,8 +176,9 @@
       </h2>
     </div>
 
-
+<div class="together">
       <div class="circleOne">
+              <div class="arrow-left"></div>
         <div class="rotate">
         <div class="ring ringOne">
         <div class="startup" style="-webkit-transform: rotateX(0deg) translateZ(200px); "><p>Uber</p></div>
@@ -160,13 +195,16 @@
         <div class="startup" style="-webkit-transform: rotateX(330deg) translateZ(200px); "><p>Yelp</p></div>
         </div>
       </div>
+
     </div>
+
 
 <div id="for">
 <h1> for </h1>
 </div>
 
         <div class="circleTwo">
+          <div class="arrow-right"></div>
           <div class="rotate">
           <div class="ring ringTwo">
           <div class="industry" style="-webkit-transform: rotateX(0deg) translateZ(200px); "><p>Dogs</p></div>
@@ -196,6 +234,7 @@
         </div>
           </div>
         </div>
+    </div>
 <button id="reset">
 This idea sucks! Reset to Spin Again
 </button>
@@ -220,11 +259,11 @@ Great Ideas
 
       var pickerOne = (Math.floor(Math.random()*12))
       var stopAngleOne = 720+pickerOne*30+"deg"
-      var rotateValueOne = "rotateX("+stopAngleOne+")"
+      var rotateValueOne = "rotateX(-"+stopAngleOne+")"
 
       var pickerTwo = (Math.floor(Math.random()*24))
-      var stopAngleTwo = 720+pickerTwo*30+"deg"
-      var rotateValueTwo = "rotateX("+stopAngleTwo+")"
+      var stopAngleTwo = 720+pickerTwo*15+"deg"
+      var rotateValueTwo = "rotateX(-"+stopAngleTwo+")"
 
       var ringOne = document.querySelector(".ringOne")
 
@@ -252,9 +291,10 @@ Great Ideas
      }
 //WINNER PICKER THIS SHIT AINT WORKING AHHHH WHYYYY
     //function pick (){
-      var meow = document.querySelector("div:nth-child("+pickerOne+")");
-      var winningStartup = meow.textContent;
+      var meowOne = $('.circleOne').find('.startup')[pickerOne];
+      var winningStartup = meowOne.textContent;
 
+      var meowTwo = $('.circleTwo').find('.industry')[pickerTwo];
 
   //  }
 
@@ -265,7 +305,7 @@ Great Ideas
   e.preventDefault();
   var list = document.querySelector("ul");
   var listItem = document.createElement("li");
-  var content = meow.textContent;
+  var content = meowOne.textContent +" for "+ meowTwo.textContent;
 
   listItem.textContent = content;
   list.appendChild(listItem);
@@ -273,41 +313,6 @@ Great Ideas
 
 
 
-
-
-
-//STOP ANGLE CALCULATED USING MATH.RANDOM
-    //    var stopAngle = Math.floor(Math.random() * 360)
-
-// ANGLE OF "POINTER" IS NEEDED (for now, let's say 10 deg)
-    //    var pointerAngle = 10
-
-// Calculating stopAngle using var stopAngle. this is different than a variable.
-//how? b/c it will be within a function or if/then statement? what is happening?
-//if pointer = 0 do we need this?
-    //    stopAngle = (360 + pointerAngle) - stopAngle;
-
-//ARRAY FOR WHEEL SPIN RESULTS
-      //  Add items to the array which correspond to the prizes in the segemnts of the wheel.
-        // The important properties are the startAngle and the endAngle in degrees, the name and anything else you want to add is optional.
-        // In order to work correctly the the start and end angles need to match the begining and end of the segments for the prizes in your wheel image.
-        // Thinking about a clock face, 0 is at the 12 o'clock, 90 is at the 3 o'clock, 180 is 6 o'clock, 270 is 9 o'clock.
-        //var prizes = new Array();
-      //  prizes[0] = {"name" : "Prize 1", "startAngle" : 0,   "endAngle" : 44};  // Note how prize end angle is 1 less than start angle of next prize so no overlap.
-      //  prizes[1] = {"name" : "Prize 2", "startAngle" : 45,  "endAngle" : 89};
-      //  prizes[2] = {"name" : "Prize 3", "startAngle" : 90,  "endAngle" : 134};
-      //  prizes[3] = {"name" : "Prize 4", "startAngle" : 135, "endAngle" : 179};
-      //  prizes[4] = {"name" : "Prize 5", "startAngle" : 180, "endAngle" : 224};
-      //  prizes[5] = {"name" : "Prize 6", "startAngle" : 225, "endAngle" : 269};
-      //  prizes[6] = {"name" : "Prize 7", "startAngle" : 270, "endAngle" : 314};
-      //  prizes[7] = {"name" : "Prize 8", "startAngle" : 315, "endAngle" : 360};
-
     </script>
-
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"> -->
-    <!-- $( "div:nth-child("+pickerOne+")")-->
-
-    <!-- </script> -->
   </body>
-
 </html>

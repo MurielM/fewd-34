@@ -6,8 +6,8 @@
     <title>Disrupticon</title>
     <style>
 
-/*
-    * {
+
+    /** {
       border: 1px;
       border: black dashed;
     }*/
@@ -183,6 +183,58 @@ button:hover {
 
 .controls {
   display: inline-block;
+  width: auto;
+}
+
+.share {
+  display: none;
+}
+
+.afterShare {
+  display: inline-block;
+  width: 100%;
+  background-color: #d3d3d3;
+  color: black;
+  border-radius: 8px;
+  height: 50px;
+  opacity: 0.8;
+  font-family: helvetica, sans-serif;
+  font-size: 20px;
+  border: none;
+  margin: 5px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.afterShare:hover {
+  height: 100px;
+  -webkit-transition: height 1s;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  bottom: 2px;
+}
+
+.try:hover {
+  /*-webkit-transition-delay: 3s;
+  transition-delay: 3s;*/
+  -webkit-transition: font-size 1s;
+  font-size: 40px;
+}
+
+.tweet {
+  padding-top: 1px;
+}
+
+.tweet:hover {
+  -webkit-transition-delay: 2s;
+  -webkit-transition: font-size 1s;
+  font-size: 40px;
+}
+ul {
+  list-style: none;
 }
 
 /*some of ringOne and ringTwo properties can be consolidated under .ring*/
@@ -267,14 +319,22 @@ This idea sucks! Reset to Spin Again
 <button id="add">
 Great idea! Add it to the list.
 </button>
+
+<br>
+
+<a class="share try" target="_blank">
+<p class=tweet>
+Let's Start a Seed Round
+</p>
+</a>
+
 <ul class=headline>
 <b> Great Ideas </b>
 </ul>
 </div>
+</div>
 
-
-
-    <script> // <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+<script>
 
       var circleOne = document.querySelector(".circleOne");
       circleOne.addEventListener("click", spinOne);
@@ -314,28 +374,33 @@ Great idea! Add it to the list.
     //  ringOne.style.removeProperty('transform');
       window.location.reload(false);
      }
-//WINNER PICKER THIS SHIT AINT WORKING AHHHH WHYYYY
-    //function pick (){
+
       var meowOne = $('.circleOne').find('.startup')[pickerOne];
-      var winningStartup = meowOne.textContent;
-
       var meowTwo = $('.circleTwo').find('.industry')[pickerTwo];
+      var content = meowOne.textContent +" for "+ meowTwo.textContent;
+      var urlContent = meowOne.textContent+"%20for%20"+meowTwo.textContent
 
-  //  }
+      var add = document.querySelector("#add");
+      add.addEventListener("click", goodIdea);
+      add.addEventListener("click", goodIdeaShare);
 
-  var add = document.querySelector("#add");
-  add.addEventListener("click", goodIdea);
+      function goodIdea(e){
+        e.preventDefault();
+        var list = document.querySelector("ul");
+        var listItem = document.createElement("li");
 
-  function goodIdea(e){
-  e.preventDefault();
-  var list = document.querySelector("ul");
-  var listItem = document.createElement("li");
-  var content = meowOne.textContent +" for "+ meowTwo.textContent;
+        listItem.textContent = content;
+        list.appendChild(listItem);
 
-  listItem.textContent = content;
-  list.appendChild(listItem);
-  }
+      }
 
+var share= document.querySelector(".share");
+
+function goodIdeaShare(e){
+e.preventDefault();
+share.setAttribute("href", "https://twitter.com/share?url=http%3A%2F%2Fbit.ly/1MKO6ln&via=murielmacdonald&hashtags=entrepreneurship%2Cstartup&text=Great%20new%20startup%20idea:%20"+urlContent)
+share.classList.add("afterShare")
+}
 
 
     </script>

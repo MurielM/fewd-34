@@ -6,8 +6,8 @@
     <title>Disrupticon</title>
     <style>
 
-
-    /** {
+/*
+    * {
       border: 1px;
       border: black dashed;
     }*/
@@ -25,13 +25,6 @@
         margin-bottom: 100px;
       }
 
-      #for {
-        position: absolute;
-        margin-left: 45%;
-        margin-top: 90px;
-        font-size: 30px;
-        font-family: cursive;
-      }
 
         .rotate {
             margin: 150px;
@@ -80,16 +73,30 @@
       }
 
       .circleOne {
-        float: left;
-        position: relative;
-        display: inline-block;
+
+        position: absolute;
+        left: 50px;
+
       }
       .circleTwo {
-        float: right;
-        position: relative;
-        margin-right: 50px;
+        position: absolute;
+        left: 650px;
         margin-top: 30px;
         height: auto;
+      }
+
+      .together {
+        position: relative;
+        width: 4000px;
+        height: 500px;
+      }
+
+      #for {
+        position: absolute;
+        left: 580px;
+        top: 85px;
+        font-size: 30px;
+        font-family: cursive;
       }
 
 
@@ -156,11 +163,27 @@ border-bottom: 20px solid transparent;
 border-right: 20px solid black;
 }
 
-/*button {
-  position: absolute;
-  margin-left: 300px;
-}*/
+button {
+  background-color: #080808;
+  color: white;
+  border-radius: 8px;
+  height: 50px;
+  opacity: 0.8;
+  font-family: helvetica, sans-serif;
+  font-size: 20px;
+  border: none;
+  margin: 5px;
+  font-weight: bold;
+}
 
+button:hover {
+  background-color: #d3d3d3;
+  color: black;
+}
+
+.controls {
+  display: inline-block;
+}
 
 /*some of ringOne and ringTwo properties can be consolidated under .ring*/
 
@@ -178,7 +201,7 @@ border-right: 20px solid black;
 
 <div class="together">
       <div class="circleOne">
-              <div class="arrow-left"></div>
+        <div class="arrow-left"></div>
         <div class="rotate">
         <div class="ring ringOne">
         <div class="startup" style="-webkit-transform: rotateX(0deg) translateZ(200px); "><p>Uber</p></div>
@@ -235,6 +258,8 @@ border-right: 20px solid black;
           </div>
         </div>
     </div>
+
+<div class=controls>
 <button id="reset">
 This idea sucks! Reset to Spin Again
 </button>
@@ -243,9 +268,9 @@ This idea sucks! Reset to Spin Again
 Great idea! Add it to the list.
 </button>
 <ul class=headline>
-Great Ideas
+<b> Great Ideas </b>
 </ul>
-
+</div>
 
 
 

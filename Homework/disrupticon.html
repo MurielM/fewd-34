@@ -25,6 +25,13 @@
         margin-bottom: 100px;
       }
 
+      h2 {
+        margin-bottom: 0;
+      }
+      em {
+        font-size: 20px;
+      }
+
 
         .rotate {
             margin: 150px;
@@ -93,7 +100,7 @@
 
       #for {
         position: absolute;
-        left: 580px;
+        left: 570px;
         top: 85px;
         font-size: 30px;
         font-family: cursive;
@@ -153,7 +160,7 @@
 
 .arrow-left {
   margin-top: 155px;
-  margin-left: 405px;
+  left: 390px;
 position: absolute;
 width: 0;
 height: 0;
@@ -249,6 +256,9 @@ ul {
       <h2>
         The Disruptive Startup Generator
       </h2>
+      <em>
+        Click the wheels to spin.
+      </em>
     </div>
 
 <div class="together">
@@ -392,7 +402,10 @@ Let's Start a Seed Round
         listItem.textContent = content;
         list.appendChild(listItem);
 
+        localStorage["idea"] = content;
       }
+
+
 
 var share= document.querySelector(".share");
 

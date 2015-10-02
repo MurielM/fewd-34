@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>3D Wheel: Rotate X</title>
+
+  <b>
+    Making a 3D Wheel | Part 1 <br> <br>
+
+    A series of DIVs, each "rotateX" by different amounts (30deg from each other). <br><br>
+    Try turning "position absolute" on and off.
+  </b>
+
+<br> <br>
+          <button>
+            Spin
+
+          </button>
+          <br> <br>
+<style>
+
+.circleOne{
+    -webkit-transform: translateZ(-200px);
+    -webkit-transform-style: preserve-3d;
+    height: auto;
+    /*-webkit-perspective: 800px;*/
+
+}
+.rotate {
+
+  -webkit-transform-style: preserve-3d;
+  margin-top: 0px;
+  -webkit-transition: transform 4s;
+  /**/maybe positioning and axis should be different divs, with independent positioning.
+
+}
+
+/*TRY TURNING POSITION ABSOLUTE ON & OFF*/
+
+.startup {
+  background-color: #d3d3d3;
+  /*position: absolute;*/
+
+
+}
+
+* {
+  border: grey dashed;
+}
+
+b {
+  border: none;
+}
+
+button {
+  background: #ff5349;
+  border: solid #ff5349;
+}
+</style>
+</head>
+<body>
+
+      <div class="circleOne">
+        <div class="rotate">
+        <!-- <div class="ring ringOne"> -->
+        <div class="startup" style="-webkit-transform: rotateX(0deg); "><p>Uber</p></div>
+        <div class="startup" style="-webkit-transform: rotateX(30deg); "><p>Tindr</p></div>
+        <div class="startup" style="-webkit-transform: rotateX(60deg); "><p>Birchbox</p></div>
+        <div class="startup" style="-webkit-transform: rotateX(90deg); "><p>Airbnb</p></div>
+        <div class="startup" style="-webkit-transform: rotateX(120deg); "><p>TINT</p></div>
+        <div class="startup" style="-webkit-transform: rotateX(150deg); "><p>Optimizely</p></div>
+        <div class="startup" style="-webkit-transform: rotateX(180deg); "><p>Hubspot</p></div>
+        <div class="startup" style="-webkit-transform: rotateX(210deg); "><p>Slack</p></div>
+        <div class="startup" style="-webkit-transform: rotateX(240deg); "><p>Coursera</p></div>
+        <div class="startup" style="-webkit-transform: rotateX(270deg); "><p>Instagram</p></div>
+        <div class="startup" style="-webkit-transform: rotateX(300deg); "><p>Indochino</p></div>
+        <div class="startup" style="-webkit-transform: rotateX(330deg); "><p>Yelp</p></div>
+        </div>
+      </div>
+
+        </body>
+
+        <script>
+
+        var button = document.querySelector("button");
+        button.addEventListener("click", spinOne);
+
+        var rotate = document.querySelector(".rotate");
+
+         function spinOne() {
+          rotate.style.transform = "rotateX(180deg)";
+          }
+
+
+        </script>
+
+</html>

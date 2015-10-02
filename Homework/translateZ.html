@@ -2,7 +2,20 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Disrupticon</title>
+  <title>3D Wheel: translateZ</title>
+
+  <b>
+    Making a 3D Wheel | Part 2 <br> <br>
+    Each DIV is translated 200px, using translateZ. They move in the direction they face.  <br><br>
+    Try turning "position absolute" on and off (for .startup), to see how this affects the "circle." <br> <br>
+    "-webkit-perspective: 800px" and "-webkit-transform-style: preserve-3d" help make this look like a 3D circle.
+  </b>
+
+<br> <br>
+          <button>
+            Spin
+
+          </button>
 <style>
 
 .circleOne{
@@ -10,12 +23,14 @@
     -webkit-transform-style: preserve-3d;
     height: 200px;
     -webkit-perspective: 800px;
+    padding-bottom: 500px;
+
 
 }
 .rotate {
 
   -webkit-transform-style: preserve-3d;
-  margin: 300px;
+  margin: 250px;
   -webkit-transition: transform 4s;
   /**/maybe positioning and axis should be different divs, with independent positioning.
 
@@ -23,15 +38,22 @@
 
 .startup {
   background-color: #d3d3d3;
-  /*position: absolute;*/
+  position: absolute;
   width: 100px;
 
 }
 
-
-
 * {
   border: grey dashed;
+}
+
+b {
+  border: none;
+}
+
+button {
+  background: #ff5349;
+  border: solid #ff5349;
 }
 
 </style>
@@ -55,16 +77,6 @@
         <div class="startup" style="-webkit-transform: rotateX(330deg) translateZ(200px); "><p>Yelp</p></div>
         </div>
       </div>
-
-
-
-
-
-
-        <button>
-          Spin
-
-        </spin>
 
         </body>
 
